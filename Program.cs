@@ -14,6 +14,7 @@ namespace MinimalDockerizedBomService
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
+                .UseUrls($"http://{Environment.MachineName}:8080/bom/")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
